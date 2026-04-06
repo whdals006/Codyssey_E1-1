@@ -802,7 +802,7 @@ $ git commit -m "1주차 미션"
 
 - GitHub 에 올리기
 ```
-git push -u origin main
+$ git push -u origin main
 ```
 <br>
 <br>

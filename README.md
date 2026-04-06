@@ -835,7 +835,7 @@ $ ls -la
 - 오류 : 
 
 ```
-rm authority
+$ rm authority
 rm: cannot remove 'authority' : Is a directory
 ```
 

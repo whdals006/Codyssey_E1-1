@@ -59,7 +59,7 @@ git version 2.53.0
 - [x] 1. 터미널 조작 로그
 - [x] 2. 권한 실습 & 증거 기록
 - [x] 3. Docker 설치 & 기본 점검
-- [x] 4. Docker 기본 명령어
+- [x] 4. Docker 기본 운영 명령어
 - [x] 5. Ubuntu 컨테이너 실행하고 내부에서 간단한 명령어 수행
 - [x] 6. Docker attach 와 Docker exec 비교
 - [x] 7. Dockerfile 기반 웹 서버 만들기
@@ -377,7 +377,7 @@ WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
 <br>
 <br>
 
-4. Docker 기본 운영 명령
+4. Docker 기본 운영 명령어
 
 <br>
 

@@ -56,6 +56,21 @@ git version 2.53.0
 
 ## 3. 수행 항목 체크리스트
 
+- [x] 1. 터미널 조작 로그
+- [x] 2. 권한 실습 & 증거 기록
+- [x] 3. Docker 설치 & 기본 점검
+- [x] 4. Docker 기본 명령어
+- [x] 5. Ubuntu 컨테이너 실행하고 내부에서 간단한 명령어 수행
+- [x] 6. Docker attach 와 Docker exec 비교
+- [x] 7. Dockerfile 기반 웹 서버 만들기
+- [x] 8. 바인드 마운트 & 볼륨
+- [x] 9. Git 설정 & GitHub 연동
+
+<br>
+<br>
+<br>
+
+
 1. 터미널 조작 로그
 
 <br>

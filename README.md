@@ -661,8 +661,7 @@ Hello Codyssey! Bind Mount Test!
 $ nano index.html
 ```
 ```
-$ cat nano index.html
-cat: nano: No such file or directory
+$ cat index.html
 Hello Codyssey! Bind Mount Test! Success?
 ```
 

@@ -442,7 +442,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 <br>
 
-- docker images -a : 존재하는 모든 컨테이너를 보여준다
+- docker ps -a : 존재하는 모든 컨테이너를 보여준다
 
 ```bash
 $ docker ps -a

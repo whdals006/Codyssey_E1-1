@@ -811,16 +811,8 @@ Initialized empty Git repository in /Users/jongmin_10047666/codyssey/git/.git/
 
 <br>
 
-- 로컬 저장소 연결
-
-```bash
-$ git remote add origin https://github.com/whdals006/Codyssey_E1-1.git
-```
-
-<br>
-
 - staging area 로 보내기
-- 
+ 
 ```bash
 $ git add web/
 ```
@@ -835,8 +827,16 @@ $ git commit -m "1주차 미션"
 
 <br>
 
+- 로컬 저장소 연결
+
+```bash
+$ git remote add origin https://github.com/whdals006/Codyssey_E1-1.git
+```
+
+<br>
+
 - GitHub 에 올리기
-- 
+ 
 ```bash
 $ git push -u origin main
 ```

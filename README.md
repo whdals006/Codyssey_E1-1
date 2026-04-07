@@ -56,15 +56,15 @@ git version 2.53.0
 
 ## 3. 수행 항목 체크리스트
 
-- [x] 1. 터미널 조작 로그
-- [x] 2. 권한 실습 & 증거 기록
-- [x] 3. Docker 설치 & 기본 점검
-- [x] 4. Docker 기본 운영 명령어
-- [x] 5. Ubuntu 컨테이너 실행하고 내부에서 간단한 명령어 수행
-- [x] 6. Docker attach 와 Docker exec 비교
-- [x] 7. Dockerfile 기반 웹 서버 만들기
-- [x] 8. 바인드 마운트 & 볼륨
-- [x] 9. Git 설정 & GitHub 연동
+- [x] 1) 터미널 조작 로그
+- [x] 2) 권한 실습 & 증거 기록
+- [x] 3) Docker 설치 & 기본 점검
+- [x] 4) Docker 기본 운영 명령어
+- [x] 5) Ubuntu 컨테이너 실행하고 내부에서 간단한 명령어 수행
+- [x] 6) Docker attach 와 Docker exec 비교
+- [x] 7) Dockerfile 기반 웹 서버 만들기
+- [x] 8) 바인드 마운트 & 볼륨
+- [x] 9) Git 설정 & GitHub 연동
 
 <br>
 <br>
@@ -195,7 +195,7 @@ test.txt
 <br>
 <br>
 
-2. 권한 실습 & 증거 기록
+### 2) 권한 실습 & 증거 기록
 
 <br>
 
@@ -271,7 +271,7 @@ total 0
 <br>
 <br>
 
-3. Docker 설치 및 기본점검
+### 3) Docker 설치 및 기본점검
 
 <br>
 
@@ -386,7 +386,7 @@ WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
 <br>
 <br>
 
-4. Docker 기본 운영 명령어
+### 4) Docker 기본 운영 명령어
 
 <br>
 
@@ -492,7 +492,7 @@ CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK
 <br>
 <br>
 
-5. ubuntu 컨테이너를 실행하고 내부 진입 후 간단한 명령어 수행
+### 5) ubuntu 컨테이너를 실행하고 내부 진입 후 간단한 명령어 수행
 
 <br>
 
@@ -525,7 +525,7 @@ exit
 <br>
 <br>
 
-6) docker attach 와 docker exec 비교
+### 6) docker attach 와 docker exec 비교
 
 <br>
 
@@ -539,7 +539,7 @@ exit
 <br>
 <br>
 
-7) Dockerfile 기반 웹 서버 만들기
+### 7) Dockerfile 기반 웹 서버 만들기
 
 <br>
 
@@ -659,7 +659,7 @@ http://localhost:8080 에 접속
 <br>
 <br>
 
-8. 바인드 마운트 & 볼륨
+### 8) 바인드 마운트 & 볼륨
 
 <br>
 
@@ -774,7 +774,7 @@ I am stil alive!
 <br>
 <br>
 
-9. Git 설정 및 GitHub 연동
+### 9) Git 설정 및 GitHub 연동
 
 <br>
 
@@ -848,7 +848,7 @@ $ git push -u origin main
 
 <br>
 
-1. 첫번째 트러블슈팅
+### 1) 첫번째 트러블슈팅
 - 오류 :
 
 ```bash
@@ -867,7 +867,7 @@ $ ls -la
 
 <br>
 
-2. 두번째 트러블슈팅
+### 2) 두번째 트러블슈팅
 
 - 오류 : 
 

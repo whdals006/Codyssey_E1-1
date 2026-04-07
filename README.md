@@ -666,17 +666,17 @@ http://localhost:8080 에 접속
 - 바인드 마운트 (Bind Mount) : 호스트의 실제 경로를 컨테이너 내부 경로에 ‘통째로 묶어서’ 연결. 파일 수정 시 재빌드 없이 즉시 컨테이너 내부에 반영됨을 확인.
 
 ```bash
-$ docker run -d -p 8081:80 -v /Users/jongmin_10047666/codyssey/web:/usr/share/nginx/html --name my-web-bindmount nginx:alpine
-ad5a1dbc51e47bfac291dbaa43530e31afe42d142ed8b8cf7f10f954d1b6c46d
-```
-
-```bash
 $ nano index.html
 ```
 
 ```bash
 $ cat index.html
 Hello Codyssey! Bind Mount Test!
+```
+
+```bash
+$ docker run -d -p 8081:80 -v /Users/jongmin_10047666/codyssey/web:/usr/share/nginx/html --name my-web-bindmount nginx:alpine
+ad5a1dbc51e47bfac291dbaa43530e31afe42d142ed8b8cf7f10f954d1b6c46d
 ```
 
 <br>

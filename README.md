@@ -27,7 +27,7 @@
 - OS : MacOS
 - Shell : zsh
 
-```
+```zsh
 $ echo $SHELL
 /bin/zsh
 ```

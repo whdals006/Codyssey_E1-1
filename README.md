@@ -75,6 +75,16 @@ git version 2.53.0
 
 <br>
 
+- 절대경로와 상대경로
+
+||절대경로(Absolute Path)|상대경로(Relative Path)|
+|:--:|:--:|:--:|
+|기준|루트 디렉토리부터 시작|현재 위치한 디렉토리부터 시작|
+|사용|위치가 절대 변하면 안 될 때|디렉토리 구조를 유지하면서 이동할 때|
+|ex|설정 파일, 시스템 경로|git 프로젝트, 협업 환경, 다른 컴퓨터로 이식|
+
+<br>
+
 - 현재 위치 확인 : `pwd`
 
 ```bash
@@ -207,6 +217,16 @@ test.txt
 |:--:|:--:|:--:|:--:|
 |표현|r--|-w-|--x|
 |숫자|4|2|1|
+
+<br>
+
+권한은 9자리로 표현이 가능한데, - - - - - - - - - 에서 첫번째 3칸은 호스트의 권한, 다음 3칸은 그룹의 권한, 마지막 3칸은 제3자의 권한이다  
+권한은 숫자의 합으로 표시가 된다.  
+rwx = r(4)+w(1)+x(1) = 7  
+r-x = r(4)+x(1) = 5  
+r-- = r(4) = 4  
+
+<br>
 
 |구분|읽기+쓰기+실행|읽기+실행|읽기+실행|
 |:--:|:--:|:--:|:--:|
@@ -387,6 +407,16 @@ WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
 <br>
 
 ### 4) Docker 기본 운영 명령어
+
+<br>
+
+- Docker Image 와 Docker Container
+
+  ||Docker Image|Docker Container|
+  |:--:|:--:|:--:|
+  |명령어|docker build|docker run|
+  |기반|dockerfile|docker image|
+  ||dockerfile을 이미지화해서 변경이 불가능|실행 중 변경가능 (container를 종료하면 data도 같이 사라지기 때문에 volume을 이용해서 data저장|
 
 <br>
 
@@ -641,6 +671,12 @@ fd3f2de382cbb71c0890b48f16a970b29aa92baea678946ff99d39230596d72d
 
 <br>
 
+- 포트매핑이 필요한 이유
+  : 컨테이너 내부는 외부와 단절된 상태이기 때문에 포트매핑으로 호스트 포트와 컨테이너 내부 포트를 연결해야 한다.
+
+
+<br>
+
 - 접속 확인하기
 
 ```bash
@@ -663,7 +699,7 @@ http://localhost:8080 에 접속
 
 <br>
 
-- 바인드 마운트 (Bind Mount) : 호스트의 실제 경로를 컨테이너 내부 경로에 ‘통째로 묶어서’ 연결. 파일 수정 시 재빌드 없이 즉시 컨테이너 내부에 반영됨을 확인.
+- 바인드 마운트 (Bind Mount) : 호스트의 실제 경로를 컨테이너 내부 경로에 ‘통째로 묶어서’ 연결. 파일 수정 시 재빌드 없이 즉시 컨테이너 내부에 반영할 수 있다.
 
 ```bash
 $ nano index.html
@@ -678,6 +714,8 @@ Hello Codyssey! Bind Mount Test!
 $ docker run -d -p 8081:80 -v /Users/jongmin_10047666/codyssey/web:/usr/share/nginx/html --name my-web-bindmount nginx:alpine
 ad5a1dbc51e47bfac291dbaa43530e31afe42d142ed8b8cf7f10f954d1b6c46d
 ```
+
+(위에서 호스트 포트 8080은 이미 사용하였으므로 8081로 호스트 포트를 설정)
 
 <br>
 
@@ -702,7 +740,7 @@ Hello Codyssey! Bind Mount Test! Success?
 
 <br>
 
-- 볼륨 (Volume) : 데이터를 컨테이너 밖에 따로 저장해서 데이터를 유지하는 디렉토리. 컨테이너를 삭제해도 데이터가 유지된다.
+- 볼륨 (Volume) : Docker가 관리하는 데이터 저장 디렉토리. 컨테이너를 삭제해도 컨테이너 내부의 데이터가 유지되게 한다.
 
 <br>
 
@@ -715,7 +753,7 @@ mydata
 
 <br>
 
-- Ubuntu  이미지로 컨테이너 실행하기
+- Ubuntu  이미지로 컨테이너를 생성하고, 생성한 볼륨과 컨테이너 내부를 연결하기
 
 ```bash
 $ docker run -d --name vol-test -v mydata:/data ubuntu sleep infinity
@@ -724,7 +762,7 @@ a1a0da52273a6c4b9c2a4c2eb4981e14cecba68ec16c5076566e82b7f45d7474
 
 <br>
 
-- 컨테이너 내부에서 bash 실행해서 데이터 넣고 나오기
+- 컨테이너 내부에서 bash 실행해서 텍스트 파일을 만들어서 데이터를 넣고 빠져 나오기
 
 ```bash
 $ docker exec -it vol-test bash
@@ -758,7 +796,7 @@ a1a0da52273a
 
 <br>
 
-- 새로운 컨테이너에 같은 볼륨 연결해서 데어터 유지됬는지 확인하기
+- 새로운 컨테이너를 생성하고 같은 볼륨에 연결해서 데이터가 유지됬는지 확인하기
 
 ```bash
 $ docker run -d --name vol-test2 -v mydata:/data ubuntu sleep infinity
@@ -769,6 +807,7 @@ aa767795ca4324835711a4739704a8848038a3284e052fba2f46384939ec9da1
 $ docker exec vol-test2 cat /data/volume_test.txt
 I am stil alive!
 ```
+- 데이터가 유지되었음을 확인함.
 
 <br>
 <br>

@@ -27,28 +27,28 @@
 - OS : MacOS
 - Shell : zsh
 
-```zsh
+```bash
 $ echo $SHELL
 /bin/zsh
 ```
 
 - Terminal : Terminal.app
 
-```
+```bash
 $ echo $TERM_PROGRAM
 Apple_Terminal
 ```
 
 - Docker 버전 : Docker version 28.5.2
 
-```
+```bash
 $ docker --version
 Docker version 28.5.2, build ecc6942
 ```
 
 - Git 버전 : git version 2.53.0
 
-```
+```bash
 $ git --version
 git version 2.53.0
 ```
@@ -77,7 +77,7 @@ git version 2.53.0
 
 - 현재 위치 확인 : `pwd`
 
-```
+```bash
 $ pwd
 /Users/jongmin_10047666
 ```
@@ -86,7 +86,7 @@ $ pwd
 
 - 목록 확인 (숨김파일 포함) : `ls -la`
 
-```
+```bash
 $ ls -la
 total 24
 drwxr-x---+ 19 jongmin_10047666  jongmin_10047666   608 Apr  6 17:14 .
@@ -114,7 +114,7 @@ drwxr-xr-x+  4 jongmin_10047666  jongmin_10047666   128 Apr  6 16:25 Public
 
 - 디렉토리 생성 : `mkdir`
 
-```
+```bash
 $ mkdir codyssey
 ```
 
@@ -122,10 +122,11 @@ $ mkdir codyssey
 
 - 디렉토리 이동 : `cd`
 
-```
+```bash
 $ cd codyssey
 ```
-```
+
+```bash
 $ pwd
 /Users/jongmin_10047666/codyssey
 ```
@@ -134,10 +135,11 @@ $ pwd
 
 - 빈 파일 생성 : `touch`
 
-```
+```bash
 $ touch test.txt
 ```
-```
+
+```bash
 $ ls
 test.txt
 ```
@@ -146,7 +148,7 @@ test.txt
 
 - 파일 내용 확인 : `cat`
 
-```
+```bash
 $ cat test.txt
 ```
 
@@ -154,10 +156,11 @@ $ cat test.txt
 
 - 파일&디렉토리 복사 : `cp`
 
-```
+```bash
 $ cp test.txt test_copy.txt
 ```
-```
+
+```bash
 $ ls
 test.txt	test_copy.txt
 ```
@@ -166,10 +169,11 @@ test.txt	test_copy.txt
 
 - 파일&디렉토리 이름 변경 : `mv`
 
-```
+```bash
 $ mv test_copy.txt test_rename.txt
 ```
-```
+
+```bash
 $ ls
 test.txt	test_rename.txt
 ```
@@ -179,10 +183,11 @@ test.txt	test_rename.txt
 
 - 파일&디렉토리 삭제 : `rm`
 
-```
+```bash
 $ rm test_rename.txt
 ```
-```
+
+```bash
 $ ls
 test.txt
 ```
@@ -218,19 +223,21 @@ test.txt
 - 디렉토리를 644로 권한 변경하기 : `chmod 644`
 
 
-```
+```bash
 $ mkdir d_authority
 ```
-```
+
+```bash
 $ ls -l
 total 0
 drwxr-xr-x  2 jongmin_10047666  jongmin_10047666  64 Apr  6 17:38 d_authority
 ```
 
-```
+```bash
 $ chmod 644 d_authority
 ```
-```
+
+```bash
 $ ls -l
 total 0
 drw-r--r--  2 jongmin_10047666  jongmin_10047666  64 Apr  6 17:38 d_authority
@@ -240,19 +247,21 @@ drw-r--r--  2 jongmin_10047666  jongmin_10047666  64 Apr  6 17:38 d_authority
 
 - 파일을 755 으로 권한 변경 : `chmod 755`
 
-```
+```bash
 $ touch f_authority.txt
 ```
-```
+
+```bash
 $ ls -l
 total 0
 -rw-r--r--  1 jongmin_10047666  jongmin_10047666   0 Apr  6 17:41 f_authority.txt
 ```
 
-```
+```bash
 $ chmod 755 f_authority.txt
 ```
-```
+
+```bash
 $ ls -l
 total 0
 -rwxr-xr-x  1 jongmin_10047666  jongmin_10047666   0 Apr  6 17:41 f_authority.txt
@@ -266,14 +275,14 @@ total 0
 
 <br>
 
-```
+```bash
 $ docker --version
 Docker version 28.5.2, build ecc6942
 ```
 
 <br>
 
-```
+```bash
 $ docker info
 Client:
  Version:    28.5.2
@@ -383,7 +392,7 @@ WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
 
 - hello-world 이미지를 컨테이너로 실행
 
-```
+```bash
 $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -416,7 +425,7 @@ For more examples and ideas, visit:
 
 - docker images : 보관 중인 도커 이미지 목록을 보여준다
 
-```
+```bash
 $ docker images
 REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
 hello-world   latest    e2ac70e7319a   13 days ago   10.1kB
@@ -426,7 +435,7 @@ hello-world   latest    e2ac70e7319a   13 days ago   10.1kB
 
 - docker ps : 현재 실행 중인 컨테이너를 보여준다
 
-```
+```bash
 $ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
@@ -435,7 +444,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 - docker images -a : 존재하는 모든 컨테이너를 보여준다
 
-```
+```bash
 $ docker ps -a
 CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
 73ad756d4740   hello-world   "/hello"   5 minutes ago   Exited (0) 5 minutes ago             nostalgic_heisenberg
@@ -445,7 +454,7 @@ CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                  
 
 - docker logs : 컨테이너의 표준 출력과 에러 로그를 확인
 
-```
+```bash
 $ docker logs 73ad756d4740 
 
 Hello from Docker!
@@ -474,7 +483,7 @@ For more examples and ideas, visit:
 
 - docker stats : 실행 중인 컨테이너의 리소스 사용량을 실시간으로 모니터링 하는 명령어
 
-```
+```bash
 $ docker stats
 CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS 
 ```
@@ -489,7 +498,7 @@ CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK
 
 - ubuntu 이미지로 컨테이너 실행
 
-```
+```bash
 $ docker run -it ubuntu bash
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
@@ -503,7 +512,7 @@ root@dfb1aca92681:/#
 
 - 컨테이너 내부에서 간단한 명령어 수행
 
-```
+```bash
 root@dfb1aca92681:/# ls
 bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 root@dfb1aca92681:/# echo "Hello from Ubuntu Container!"
@@ -536,13 +545,15 @@ exit
 
 - 폴더 구조 만들기
 
-```
+```bash
 $ mkdir web
 ```
-```
+
+```bash
 $ cd web
 ```
-```
+
+```bash
 $ pwd
 /Users/jongmin_10047666/codyssey/web
 ```
@@ -550,10 +561,11 @@ $ pwd
 
 - 웹 파일 만들고 편집하기
 
-```
+```bash
 $ nano index.html
 ```
-```
+
+```bash
 $ cat index.html
 Hello Codyssey!
 ```
@@ -562,10 +574,11 @@ Hello Codyssey!
 
 - Dockerfile 만들고 편집하기
 
-```
+```bash
 $ nano Dockerfile
 ```
-```
+
+```bash
 $ cat dockerfile
 From nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
@@ -575,7 +588,7 @@ COPY index.html /usr/share/nginx/html/index.html
 
 - Dockerfile 을 이미지로 만들기
 
-```
+```bash
 $ docker build -t my-web:1.0 .
 [+] Building 7.6s (7/7) FINISHED                                                                docker:orbstack
  => [internal] load build definition from Dockerfile                                                       0.2s
@@ -621,7 +634,7 @@ $ docker build -t my-web:1.0 .
 
 - 생성된 이미지를 포트매핑으로 컨테이너 실행
 
-```
+```bash
 $ docker run -d -p 8080:80 my-web:1.0
 fd3f2de382cbb71c0890b48f16a970b29aa92baea678946ff99d39230596d72d
 ```
@@ -630,7 +643,7 @@ fd3f2de382cbb71c0890b48f16a970b29aa92baea678946ff99d39230596d72d
 
 - 접속 확인하기
 
-```
+```bash
 http://localhost:8080 에 접속
 ```
 
@@ -652,15 +665,16 @@ http://localhost:8080 에 접속
 
 - 바인드 마운트 (Bind Mount) : 호스트의 실제 경로를 컨테이너 내부 경로에 ‘통째로 묶어서’ 연결. 파일 수정 시 재빌드 없이 즉시 컨테이너 내부에 반영됨을 확인.
 
-```
+```bash
 $ docker run -d -p 8081:80 -v /Users/jongmin_10047666/codyssey/web:/usr/share/nginx/html --name my-web-bindmount nginx:alpine
 ad5a1dbc51e47bfac291dbaa43530e31afe42d142ed8b8cf7f10f954d1b6c46d
 ```
 
-```
+```bash
 $ nano index.html
 ```
-```
+
+```bash
 $ cat index.html
 Hello Codyssey! Bind Mount Test!
 ```
@@ -671,10 +685,11 @@ Hello Codyssey! Bind Mount Test!
 ![화면 캡쳐](bind_mount_test1.png)
 
 
-```
+```bash
 $ nano index.html
 ```
-```
+
+```bash
 $ cat index.html
 Hello Codyssey! Bind Mount Test! Success?
 ```
@@ -693,7 +708,7 @@ Hello Codyssey! Bind Mount Test! Success?
 
 - 볼륨 생성하기
 
-```
+```bash
 $ docker volume create mydata
 mydata
 ```
@@ -702,7 +717,7 @@ mydata
 
 - Ubuntu  이미지로 컨테이너 실행하기
 
-```
+```bash
 $ docker run -d --name vol-test -v mydata:/data ubuntu sleep infinity
 a1a0da52273a6c4b9c2a4c2eb4981e14cecba68ec16c5076566e82b7f45d7474
 ```
@@ -711,10 +726,11 @@ a1a0da52273a6c4b9c2a4c2eb4981e14cecba68ec16c5076566e82b7f45d7474
 
 - 컨테이너 내부에서 bash 실행해서 데이터 넣고 나오기
 
-```
+```bash
 $ docker exec -it vol-test bash
 ```
-```
+
+```bash
 root@a1a0da52273a:/# cd data
 root@a1a0da52273a:/data# echo "I am stil alive!" > volume_test.txt
 root@a1a0da52273a:/data# ls
@@ -727,7 +743,7 @@ exit
 
 - 컨테이너 삭제하기
 
-```
+```bash
 $ docker ps
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                     NAMES
 a1a0da52273a   ubuntu         "sleep infinity"         4 minutes ago    Up 4 minutes                                              vol-test
@@ -735,7 +751,7 @@ ad5a1dbc51e4   nginx:alpine   "/docker-entrypoint.…"   17 minutes ago   Up 17 
 fd3f2de382cb   my-web:1.0     "/docker-entrypoint.…"   33 minutes ago   Up 33 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   kind_nightingale
 ```
 
-```
+```bash
 $ docker rm -f a1a0da52273a
 a1a0da52273a
 ```
@@ -744,12 +760,12 @@ a1a0da52273a
 
 - 새로운 컨테이너에 같은 볼륨 연결해서 데어터 유지됬는지 확인하기
 
-```
+```bash
 $ docker run -d --name vol-test2 -v mydata:/data ubuntu sleep infinity
 aa767795ca4324835711a4739704a8848038a3284e052fba2f46384939ec9da1
 ```
 
-```
+```bash
 $ docker exec vol-test2 cat /data/volume_test.txt
 I am stil alive!
 ```
@@ -764,16 +780,19 @@ I am stil alive!
 
 - Git 사용자 정보 등록 및 기본 브랜치 설정
 
-```
+```bash
 $ git config --global user.name "jongmin"
 ```
-```
+
+```bash
 $ git config --global user.email "jongmin006@gmail.com"
 ```
-```
+
+```bash
 $ git config --global init.defaultBranch main
 ```
-```
+
+```bash
 $ git config --list
 credential.helper=osxkeychain
 user.name=jongmin
@@ -785,7 +804,7 @@ init.defaultbranch=main
 
 - Git 초기화하기
 
-```
+```bash
 $ git init
 Initialized empty Git repository in /Users/jongmin_10047666/codyssey/git/.git/
 ```
@@ -794,28 +813,31 @@ Initialized empty Git repository in /Users/jongmin_10047666/codyssey/git/.git/
 
 - 로컬 저장소 연결
 
-```
+```bash
 $ git remote add origin https://github.com/whdals006/Codyssey_E1-1.git
 ```
 
 <br>
 
 - staging area 로 보내기
-```
+- 
+```bash
 $ git add web/
 ```
 
 <br>
 
 - git repository 로 보내기
-```
+
+```bash
 $ git commit -m "1주차 미션"
 ```
 
 <br>
 
 - GitHub 에 올리기
-```
+- 
+```bash
 $ git push -u origin main
 ```
 <br>
@@ -829,7 +851,7 @@ $ git push -u origin main
 1. 첫번째 트러블슈팅
 - 오류 :
 
-```
+```bash
 $ ls-la
 ls-la : command no found
 ```
@@ -837,8 +859,9 @@ ls-la : command no found
 
 - 원인 : 명령어와 옵션 사이에 띄어쓰기를 안함
 
-- 해결 : 
-```
+- 해결 :
+- 
+```bash
 $ ls -la
 ```
 
@@ -848,7 +871,7 @@ $ ls -la
 
 - 오류 : 
 
-```
+```bash
 $ rm authority
 rm: cannot remove 'authority' : Is a directory
 ```
@@ -857,7 +880,7 @@ rm: cannot remove 'authority' : Is a directory
 
 - 해결 :
 
-```
+```bash
 $ rm -r authority
 ```
 

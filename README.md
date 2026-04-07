@@ -416,7 +416,7 @@ WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
   |:--:|:--:|:--:|
   |명령어|docker build|docker run|
   |기반|dockerfile|docker image|
-  ||dockerfile을 이미지화해서 변경이 불가능|실행 중 변경가능 (container를 종료하면 data도 같이 사라지기 때문에 volume을 이용해서 data저장|
+  |변경|이미지화가 된 상태에서 변경이 불가능 (dockerfile을 재빌드 해야함)|실행 중 변경가능 (container를 종료하면 data도 같이 사라지기 때문에 volume을 이용해서 data저장|
 
 <br>
 
